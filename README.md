@@ -1,12 +1,12 @@
-# SS-Helper
+## SS-Helper
 
-## Características
-1. Descarga, extrae y ejecuta automáticamente System Informer sin necesidad de instalación
-2. Descarga y ejecuta automáticamente la última versión de Avenge
-3. Detecta inyecciones DLL y archivos .exe sin firmar
-4. Lee cualquier archivo Search results.txt que le pongas al lado del programa para detectar archivos sin firma digital como Binary, automáticamente por ti
-5. Elimina todos los directorios y archivos que no se vayan usando en tu SS automáticamente, con una opción de SelfDestuct al final
-6. Si se detectan resultados duplicados a la hora de escanear archivos sin firma digital, solo aparecerán 1 vez por consola
-7. Te da recordatorios de bypasses que tengas que comprobar tú manualmente, que no estén incluidos en el SS Helper y en Avenge
-8. Si el programa falla en cualquier punto posible, dará un error detallado pero seguirá funcionando y terminando todos sus checks
-9. Mientras el programa esté usando algún archivo (como sigcheck o system informer), estos serán marcados como archivos "ocultos", y eliminados cuando los dejes de utilizar
+## Features
+1. Automatically downloads, extracts and runs System Informer without the need for installation.
+2. Automatically downloads and runs the latest version of Avenge
+3. Detects unsigned DLL injections and unsigned .exe files
+4. Reads any Search results.txt file you put next to the program to detect unsigned files such as Binary, automatically for you.
+5. Deletes all directories and files that are not being used in your SS automatically, with a SelfDestuct option at the end.
+6. If duplicate results are detected when scanning unsigned files, they will only appear 1 time per console.
+7. Gives you reminders for bypasses that you have to check manually, that are not included in SS Helper and Avenge.
+8. If the program fails at any possible point, it will give a detailed error but will continue to run and complete all its checks.
+9. As long as the program is using any files (such as sigcheck or system informer), they will be marked as "hidden" files, and deleted when you stop using them.
