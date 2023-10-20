@@ -1,4 +1,4 @@
-	.file	"main.c"
+	.file	"main.s"
 	.text
 	.def	wprintf;	.scl	3;	.type	32;	.endef
 	.seh_proc	wprintf
