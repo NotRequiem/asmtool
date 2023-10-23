@@ -5,7 +5,7 @@ To run this program, you will need to have Powershell (latest version) installed
 1. Automatically downloads, extracts and runs System Informer without the need for installation. It will run SystemInformer as admin for you if you run SSHelper as admininistrator.
 2. Detects unsigned DLL injections and unsigned .exe files
 3. Reads any Search results.txt file you put next to the program to detect unsigned files such as Binary, automatically for you.
-4. Deletes all directories and files that are not being used in your SS automatically, with a SelfDestuct option at the end.
+4. Deletes all directories and files that are not being used in your SS automatically, with a SelfDestruct option at the end.
 5. If duplicate results are detected when scanning unsigned files, they will only appear 1 time per console.
 6. If the program fails at any possible point, it will give a detailed error but will continue to run and complete all its checks.
 7. As long as the program is using any files (such as sigcheck or system informer), they will be marked as "hidden" files, and deleted when you stop using them.
