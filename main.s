@@ -249,58 +249,61 @@ RemoveDirectoryRecursively:
 	popq	%rbp
 	ret
 	.seh_endproc
-	.globl	DownloadFile
-	.def	DownloadFile;	.scl	2;	.type	32;	.endef
-	.seh_proc	DownloadFile
-DownloadFile:
-	pushq	%rbp
-	.seh_pushreg	%rbp
-	movq	%rsp, %rbp
-	.seh_setframe	%rbp, 0
-	subq	$64, %rsp
-	.seh_stackalloc	64
-	.seh_endprologue
-	movq	%rcx, 16(%rbp)
-	movq	16(%rbp), %rax
-	movq	%rax, -8(%rbp)
-	movq	-8(%rbp), %rax
-	movq	8(%rax), %rdx
-	movq	-8(%rbp), %rax
-	movq	(%rax), %rax
-	movq	$0, 32(%rsp)
-	movl	$0, %r9d
-	movq	%rdx, %r8
-	movq	%rax, %rdx
-	movl	$0, %ecx
-	call	URLDownloadToFileW
-	addq	$64, %rsp
-	popq	%rbp
-	ret
-	.seh_endproc
 	.section .rdata,"dr"
 	.align 8
 .LC4:
-	.ascii "h\0t\0t\0p\0s\0:\0/\0/\0g\0i\0t\0h\0u\0b\0.\0c\0o\0m\0/\0w\0i\0n\0s\0i\0d\0e\0r\0s\0s\0/\0s\0i\0-\0b\0u\0i\0l\0d\0s\0/\0r\0e\0l\0e\0a\0s\0e\0s\0/\0d\0o\0w\0n\0l\0o\0a\0d\0/\0"
-	.ascii "3\0.\0"
-	.ascii "0\0.\0"
-	.ascii "7\0"
-	.ascii "2\0"
-	.ascii "7\0"
-	.ascii "0\0/\0s\0y\0s\0t\0e\0m\0i\0n\0f\0o\0r\0m\0e\0r\0-\0"
-	.ascii "3\0.\0"
-	.ascii "0\0.\0"
-	.ascii "7\0"
-	.ascii "2\0"
-	.ascii "7\0"
-	.ascii "0\0-\0b\0i\0n\0.\0z\0i\0p\0\0\0"
+	.ascii "G\0e\0t\0C\0u\0r\0r\0e\0n\0t\0D\0i\0r\0e\0c\0t\0o\0r\0y\0W\0\0\0"
 	.align 8
 .LC5:
-	.ascii "h\0t\0t\0p\0s\0:\0/\0/\0d\0l\0.\0a\0v\0e\0n\0g\0e\0.\0a\0c\0\0\0"
+	.ascii "%\0s\0\\\0S\0i\0g\0C\0h\0e\0c\0k\0.\0e\0x\0e\0\0\0"
 	.align 8
 .LC6:
-	.ascii "h\0t\0t\0p\0s\0:\0/\0/\0d\0o\0w\0n\0l\0o\0a\0d\0.\0s\0y\0s\0i\0n\0t\0e\0r\0n\0a\0l\0s\0.\0c\0o\0m\0/\0f\0i\0l\0e\0s\0/\0S\0i\0g\0c\0h\0e\0c\0k\0.\0z\0i\0p\0\0\0"
-	.align 8
+	.ascii "p\0o\0w\0e\0r\0s\0h\0e\0l\0l\0 \0-\0C\0o\0m\0m\0a\0n\0d\0 \0\"\0I\0n\0v\0o\0k\0e\0-\0W\0e\0b\0R\0e\0q\0u\0e\0s\0t\0 \0-\0U\0r\0i\0 \0'\0%\0s\0'\0 \0-\0O\0u\0t\0F\0i\0l\0e\0 \0'\0%\0s\0\\\0S\0i\0g\0C\0h\0e\0c\0k\0.\0z\0i\0p\0'\0 \0-\0U\0s\0e\0B\0a\0s\0i\0c\0P\0a\0r\0s\0i\0n\0g\0 \0-\0E\0r\0r\0o\0r\0A\0c\0t\0i\0o\0n\0 \0S\0i\0l\0e\0n\0t\0l\0y\0C\0o\0n\0t\0i\0n\0u\0e\0\"\0\0\0"
 .LC7:
+	.ascii "sigcheck64.exe\0"
+	.align 8
+.LC8:
+	.ascii "p\0o\0w\0e\0r\0s\0h\0e\0l\0l\0 \0-\0C\0o\0m\0m\0a\0n\0d\0 \0\"\0I\0n\0v\0o\0k\0e\0-\0W\0e\0b\0R\0e\0q\0u\0e\0s\0t\0 \0-\0U\0r\0i\0 \0'\0%\0s\0'\0 \0-\0O\0u\0t\0F\0i\0l\0e\0 \0'\0%\0s\0\\\0s\0y\0s\0t\0e\0m\0i\0n\0f\0o\0r\0m\0e\0r\0-\0"
+	.ascii "3\0.\0"
+	.ascii "0\0.\0"
+	.ascii "7\0"
+	.ascii "2\0"
+	.ascii "7\0"
+	.ascii "0\0-\0b\0i\0n\0.\0z\0i\0p\0'\0 \0-\0U\0s\0e\0B\0a\0s\0i\0c\0P\0a\0r\0s\0i\0n\0g\0 \0-\0E\0r\0r\0o\0r\0A\0c\0t\0i\0o\0n\0 \0S\0i\0l\0e\0n\0t\0l\0y\0C\0o\0n\0t\0i\0n\0u\0e\0\"\0\0\0"
+	.align 8
+.LC9:
+	.ascii "p\0o\0w\0e\0r\0s\0h\0e\0l\0l\0 \0-\0C\0o\0m\0m\0a\0n\0d\0 \0\"\0E\0x\0p\0a\0n\0d\0-\0A\0r\0c\0h\0i\0v\0e\0 \0-\0P\0a\0t\0h\0 \0'\0%\0s\0\\\0s\0y\0s\0t\0e\0m\0i\0n\0f\0o\0r\0m\0e\0r\0-\0"
+	.ascii "3\0.\0"
+	.ascii "0\0.\0"
+	.ascii "7\0"
+	.ascii "2\0"
+	.ascii "7\0"
+	.ascii "0\0-\0b\0i\0n\0.\0z\0i\0p\0'\0 \0-\0D\0e\0s\0t\0i\0n\0a\0t\0i\0o\0n\0P\0a\0t\0h\0 \0'\0%\0s\0'\0 \0-\0F\0o\0r\0c\0e\0 \0-\0E\0r\0r\0o\0r\0A\0c\0t\0i\0o\0n\0 \0S\0i\0l\0e\0n\0t\0l\0y\0C\0o\0n\0t\0i\0n\0u\0e\0\"\0\0\0"
+	.align 2
+.LC10:
+	.ascii "i\0"
+	.ascii "3\0"
+	.ascii "8\0"
+	.ascii "6\0\0\0"
+	.align 2
+.LC11:
+	.ascii "a\0r\0m\0"
+	.ascii "6\0"
+	.ascii "4\0\0\0"
+	.align 2
+.LC12:
+	.ascii "R\0E\0A\0D\0M\0E\0.\0t\0x\0t\0\0\0"
+	.align 2
+.LC13:
+	.ascii "L\0I\0C\0E\0N\0S\0E\0.\0t\0x\0t\0\0\0"
+	.align 2
+.LC14:
+	.ascii "E\0u\0l\0a\0.\0t\0x\0t\0\0\0"
+	.align 2
+.LC15:
+	.ascii "C\0O\0P\0Y\0R\0I\0G\0H\0T\0.\0t\0x\0t\0\0\0"
+	.align 8
+.LC16:
 	.ascii "s\0y\0s\0t\0e\0m\0i\0n\0f\0o\0r\0m\0e\0r\0-\0"
 	.ascii "3\0.\0"
 	.ascii "0\0.\0"
@@ -308,44 +311,6 @@ DownloadFile:
 	.ascii "2\0"
 	.ascii "7\0"
 	.ascii "0\0-\0b\0i\0n\0.\0z\0i\0p\0\0\0"
-	.align 2
-.LC8:
-	.ascii "A\0v\0e\0n\0g\0e\0.\0e\0x\0e\0\0\0"
-	.align 2
-.LC9:
-	.ascii "S\0i\0g\0c\0h\0e\0c\0k\0.\0z\0i\0p\0\0\0"
-	.align 8
-.LC10:
-	.ascii "p\0o\0w\0e\0r\0s\0h\0e\0l\0l\0 \0-\0C\0o\0m\0m\0a\0n\0d\0 \0\"\0I\0n\0v\0o\0k\0e\0-\0W\0e\0b\0R\0e\0q\0u\0e\0s\0t\0 \0-\0U\0r\0i\0 \0'\0%\0s\0'\0 \0-\0O\0u\0t\0F\0i\0l\0e\0 \0'\0%\0s\0\\\0S\0i\0g\0C\0h\0e\0c\0k\0.\0z\0i\0p\0'\0 \0-\0U\0s\0e\0B\0a\0s\0i\0c\0P\0a\0r\0s\0i\0n\0g\0\"\0\0\0"
-	.align 8
-.LC11:
-	.ascii "p\0o\0w\0e\0r\0s\0h\0e\0l\0l\0 \0-\0C\0o\0m\0m\0a\0n\0d\0 \0\"\0E\0x\0p\0a\0n\0d\0-\0A\0r\0c\0h\0i\0v\0e\0 \0-\0P\0a\0t\0h\0 \0'\0%\0s\0\\\0S\0i\0g\0C\0h\0e\0c\0k\0.\0z\0i\0p\0'\0 \0-\0D\0e\0s\0t\0i\0n\0a\0t\0i\0o\0n\0P\0a\0t\0h\0 \0'\0%\0s\0'\0 \0-\0F\0o\0r\0c\0e\0\"\0\0\0"
-.LC12:
-	.ascii "sigcheck64.exe\0"
-	.align 8
-.LC13:
-	.ascii "p\0o\0w\0e\0r\0s\0h\0e\0l\0l\0 \0-\0C\0o\0m\0m\0a\0n\0d\0 \0\"\0I\0n\0v\0o\0k\0e\0-\0W\0e\0b\0R\0e\0q\0u\0e\0s\0t\0 \0-\0U\0r\0i\0 \0'\0%\0s\0'\0 \0-\0O\0u\0t\0F\0i\0l\0e\0 \0'\0%\0s\0\\\0s\0y\0s\0t\0e\0m\0i\0n\0f\0o\0r\0m\0e\0r\0-\0"
-	.ascii "3\0.\0"
-	.ascii "0\0.\0"
-	.ascii "7\0"
-	.ascii "2\0"
-	.ascii "7\0"
-	.ascii "0\0-\0b\0i\0n\0.\0z\0i\0p\0'\0 \0-\0U\0s\0e\0B\0a\0s\0i\0c\0P\0a\0r\0s\0i\0n\0g\0\"\0\0\0"
-	.align 8
-.LC14:
-	.ascii "p\0o\0w\0e\0r\0s\0h\0e\0l\0l\0 \0-\0C\0o\0m\0m\0a\0n\0d\0 \0\"\0E\0x\0p\0a\0n\0d\0-\0A\0r\0c\0h\0i\0v\0e\0 \0-\0P\0a\0t\0h\0 \0'\0%\0s\0\\\0s\0y\0s\0t\0e\0m\0i\0n\0f\0o\0r\0m\0e\0r\0-\0"
-	.ascii "3\0.\0"
-	.ascii "0\0.\0"
-	.ascii "7\0"
-	.ascii "2\0"
-	.ascii "7\0"
-	.ascii "0\0-\0b\0i\0n\0.\0z\0i\0p\0'\0 \0-\0D\0e\0s\0t\0i\0n\0a\0t\0i\0o\0n\0P\0a\0t\0h\0 \0'\0%\0s\0'\0 \0-\0F\0o\0r\0c\0e\0\"\0\0\0"
-	.align 8
-.LC15:
-	.ascii "p\0o\0w\0e\0r\0s\0h\0e\0l\0l\0 \0-\0C\0o\0m\0m\0a\0n\0d\0 \0\"\0I\0n\0v\0o\0k\0e\0-\0W\0e\0b\0R\0e\0q\0u\0e\0s\0t\0 \0-\0U\0r\0i\0 \0'\0%\0s\0'\0 \0-\0O\0u\0t\0F\0i\0l\0e\0 \0'\0%\0s\0\\\0A\0v\0e\0n\0g\0e\0.\0e\0x\0e\0'\0\0\0"
-	.align 2
-.LC16:
-	.ascii "o\0p\0e\0n\0\0\0"
 	.align 8
 .LC17:
 	.ascii "S\0y\0s\0t\0e\0m\0 \0I\0n\0f\0o\0r\0m\0e\0r\0\0\0"
@@ -359,38 +324,10 @@ DownloadFile:
 	.ascii "S\0y\0s\0t\0e\0m\0 \0I\0n\0f\0o\0r\0m\0e\0r\0\\\0S\0y\0s\0t\0e\0m\0I\0n\0f\0o\0r\0m\0e\0r\0.\0e\0x\0e\0\0\0"
 	.align 2
 .LC20:
-	.ascii "R\0E\0A\0D\0M\0E\0.\0t\0x\0t\0\0\0"
+	.ascii "o\0p\0e\0n\0\0\0"
 	.align 2
 .LC21:
-	.ascii "L\0I\0C\0E\0N\0S\0E\0.\0t\0x\0t\0\0\0"
-	.align 2
-.LC22:
-	.ascii "E\0u\0l\0a\0.\0t\0x\0t\0\0\0"
-	.align 2
-.LC23:
-	.ascii "C\0O\0P\0Y\0R\0I\0G\0H\0T\0.\0t\0x\0t\0\0\0"
-	.align 2
-.LC24:
-	.ascii "s\0i\0g\0c\0h\0e\0c\0k\0.\0e\0x\0e\0\0\0"
-	.align 8
-.LC25:
-	.ascii "s\0i\0g\0c\0h\0e\0c\0k\0"
-	.ascii "6\0"
-	.ascii "4\0a\0.\0e\0x\0e\0\0\0"
-	.align 2
-.LC26:
-	.ascii "S\0i\0g\0C\0h\0e\0c\0k\0.\0z\0i\0p\0\0\0"
-	.align 2
-.LC27:
-	.ascii "a\0r\0m\0"
-	.ascii "6\0"
-	.ascii "4\0\0\0"
-	.align 2
-.LC28:
-	.ascii "i\0"
-	.ascii "3\0"
-	.ascii "8\0"
-	.ascii "6\0\0\0"
+	.ascii "*\0\0\0"
 	.text
 	.globl	download_sstools
 	.def	download_sstools;	.scl	2;	.type	32;	.endef
@@ -398,159 +335,173 @@ DownloadFile:
 download_sstools:
 	pushq	%rbp
 	.seh_pushreg	%rbp
-	subq	$2256, %rsp
-	.seh_stackalloc	2256
+	subq	$3584, %rsp
+	.seh_stackalloc	3584
 	leaq	128(%rsp), %rbp
 	.seh_setframe	%rbp, 128
 	.seh_endprologue
-	movl	$0, 2116(%rbp)
-	leaq	1568(%rbp), %rax
-	movl	$260, %r8d
+	leaq	2912(%rbp), %rax
 	movq	%rax, %rdx
-	movl	$0, %ecx
-	movq	__imp_GetModuleFileNameW(%rip), %rax
+	movl	$260, %ecx
+	movq	__imp_GetCurrentDirectoryW(%rip), %rax
 	call	*%rax
-	leaq	1568(%rbp), %rax
-	movq	%rax, %rcx
-	movq	__imp_PathRemoveFileSpecW(%rip), %rax
-	call	*%rax
+	testl	%eax, %eax
+	jne	.L17
 	leaq	.LC4(%rip), %rax
-	movq	%rax, 2104(%rbp)
-	leaq	.LC5(%rip), %rax
+	movq	%rax, %rcx
+	call	wprintf
+.L17:
+	leaq	2912(%rbp), %rdx
+	leaq	2384(%rbp), %rax
+	movq	%rdx, %r9
+	leaq	.LC5(%rip), %r8
+	movl	$260, %edx
+	movq	%rax, %rcx
+	call	swprintf
+	movabsq	$31525695615402088, %rax
+	movabsq	$13229525772664947, %rdx
+	movq	%rax, 2288(%rbp)
+	movq	%rdx, 2296(%rbp)
+	movabsq	$28429479460798572, %r10
+	movabsq	$32370142020304942, %r11
+	movq	%r10, 2304(%rbp)
+	movq	%r11, 2312(%rbp)
+	movabsq	$28429470871191657, %r10
+	movabsq	$30399714103787634, %r11
+	movq	%r10, 2320(%rbp)
+	movq	%r11, 2328(%rbp)
+	movabsq	$31244147619659891, %r10
+	movabsq	$29555366478938221, %r11
+	movq	%r10, 2336(%rbp)
+	movq	%r11, 2344(%rbp)
+	movabsq	$28429419330863207, %r8
+	movabsq	$14636930724200547, %r9
+	movq	%r8, 2352(%rbp)
+	movq	%r9, 2360(%rbp)
+	movabsq	$12948072270528619, %r10
+	movabsq	$433799561317, %r11
+	movq	%r10, 2362(%rbp)
+	movq	%r11, 2370(%rbp)
+	movq	%rax, 2080(%rbp)
+	movq	%rdx, 2088(%rbp)
+	movabsq	$29273895800995943, %rax
+	movabsq	$27866220269273205, %rdx
 	movq	%rax, 2096(%rbp)
-	leaq	.LC6(%rip), %rax
-	movq	%rax, 2088(%rbp)
-	movq	2104(%rbp), %rax
-	movq	%rax, 1520(%rbp)
-	leaq	.LC7(%rip), %rax
-	movq	%rax, 1528(%rbp)
-	movq	2096(%rbp), %rax
-	movq	%rax, 1536(%rbp)
-	leaq	.LC8(%rip), %rax
-	movq	%rax, 1544(%rbp)
-	movq	2088(%rbp), %rax
-	movq	%rax, 1552(%rbp)
-	leaq	.LC9(%rip), %rax
-	movq	%rax, 1560(%rbp)
-	movl	$0, 2124(%rbp)
-	jmp	.L19
-.L20:
-	leaq	1520(%rbp), %rax
-	movl	2124(%rbp), %edx
-	movslq	%edx, %rdx
-	salq	$4, %rdx
-	addq	%rdx, %rax
-	movq	$0, 40(%rsp)
-	movl	$0, 32(%rsp)
-	movq	%rax, %r9
-	leaq	DownloadFile(%rip), %r8
-	movl	$0, %edx
-	movl	$0, %ecx
-	movq	__imp_CreateThread(%rip), %rax
-	call	*%rax
-	movl	2124(%rbp), %edx
-	movslq	%edx, %rdx
-	movq	%rax, 1488(%rbp,%rdx,8)
-	addl	$1, 2124(%rbp)
-.L19:
-	movl	2124(%rbp), %eax
-	cmpl	$2, %eax
-	jbe	.L20
-	leaq	1488(%rbp), %rax
-	movl	$-1, %r9d
-	movl	$1, %r8d
-	movq	%rax, %rdx
-	movl	$3, %ecx
-	movq	__imp_WaitForMultipleObjects(%rip), %rax
-	call	*%rax
-	movl	$0, 2120(%rbp)
-	jmp	.L21
-.L22:
-	movl	2120(%rbp), %eax
-	cltq
-	movq	1488(%rbp,%rax,8), %rax
-	movq	%rax, %rcx
-	movq	__imp_CloseHandle(%rip), %rax
-	call	*%rax
-	addl	$1, 2120(%rbp)
-.L21:
-	movl	2120(%rbp), %eax
-	cmpl	$2, %eax
-	jbe	.L22
-	movq	2088(%rbp), %rcx
-	leaq	704(%rbp), %rax
-	leaq	1568(%rbp), %rdx
+	movq	%rdx, 2104(%rbp)
+	movabsq	$33495724099174511, %rax
+	movabsq	$29555366483066985, %rdx
+	movq	%rax, 2112(%rbp)
+	movq	%rdx, 2120(%rbp)
+	movabsq	$32370111954616420, %rax
+	movabsq	$29555366478938227, %rdx
+	movq	%rax, 2128(%rbp)
+	movq	%rdx, 2136(%rbp)
+	movabsq	$29555375072215085, %rax
+	movabsq	$13229817833193580, %rdx
+	movq	%rax, 2144(%rbp)
+	movq	%rdx, 2152(%rbp)
+	movabsq	$28429436510863474, %rax
+	movabsq	$32370056120959073, %rdx
+	movq	%rax, 2160(%rbp)
+	movq	%rdx, 2168(%rbp)
+	movabsq	$33495998976491567, %rax
+	movabsq	$27303549489381486, %rdx
+	movq	%rax, 2176(%rbp)
+	movq	%rdx, 2184(%rbp)
+	movabsq	$12948067975102564, %rax
+	movabsq	$14073985061748784, %rdx
+	movq	%rax, 2192(%rbp)
+	movq	%rdx, 2200(%rbp)
+	movabsq	$32369824188334135, %rax
+	movabsq	$28429470871519353, %rdx
+	movq	%rax, 2208(%rbp)
+	movq	%rdx, 2216(%rbp)
+	movabsq	$28710920077770861, %rax
+	movabsq	$28429440806682735, %rdx
+	movq	%rax, 2224(%rbp)
+	movq	%rdx, 2232(%rbp)
+	movabsq	$12948067974971506, %rax
+	movabsq	$14073985061748784, %rdx
+	movq	%rax, 2240(%rbp)
+	movq	%rdx, 2248(%rbp)
+	movabsq	$27584740994318391, %rax
+	movabsq	$34340144734404713, %rdx
+	movq	%rax, 2256(%rbp)
+	movq	%rdx, 2264(%rbp)
+	movabsq	$481043218554, %rax
+	movq	%rax, 2270(%rbp)
+	leaq	2288(%rbp), %rcx
+	leaq	1296(%rbp), %rax
+	leaq	2912(%rbp), %rdx
 	movq	%rdx, 32(%rsp)
 	movq	%rcx, %r9
-	leaq	.LC10(%rip), %r8
+	leaq	.LC6(%rip), %r8
 	movl	$388, %edx
 	movq	%rax, %rcx
 	call	swprintf
-	leaq	1568(%rbp), %rcx
-	leaq	704(%rbp), %rax
-	leaq	1568(%rbp), %rdx
-	movq	%rdx, 32(%rsp)
-	movq	%rcx, %r9
-	leaq	.LC11(%rip), %r8
-	movl	$388, %edx
+	leaq	1296(%rbp), %rax
 	movq	%rax, %rcx
-	call	swprintf
+	movq	__imp__wsystem(%rip), %rax
+	call	*%rax
+	movl	%eax, 3452(%rbp)
 	movl	$2, %edx
-	leaq	.LC12(%rip), %rax
+	leaq	.LC7(%rip), %rax
 	movq	%rax, %rcx
 	movq	__imp_SetFileAttributesA(%rip), %rax
 	call	*%rax
-	movq	2104(%rbp), %rcx
-	leaq	704(%rbp), %rax
-	leaq	1568(%rbp), %rdx
+	leaq	2080(%rbp), %rcx
+	leaq	1296(%rbp), %rax
+	leaq	2912(%rbp), %rdx
 	movq	%rdx, 32(%rsp)
 	movq	%rcx, %r9
-	leaq	.LC13(%rip), %r8
-	movl	$388, %edx
-	movq	%rax, %rcx
-	call	swprintf
-	leaq	704(%rbp), %rax
-	movq	%rax, %rcx
-	movq	__imp__wsystem(%rip), %rax
-	call	*%rax
-	movl	%eax, 2116(%rbp)
-	leaq	1568(%rbp), %rcx
-	leaq	-80(%rbp), %rax
-	leaq	1568(%rbp), %rdx
-	movq	%rdx, 32(%rsp)
-	movq	%rcx, %r9
-	leaq	.LC14(%rip), %r8
-	movl	$388, %edx
-	movq	%rax, %rcx
-	call	swprintf
-	leaq	-80(%rbp), %rax
-	movq	%rax, %rcx
-	movq	__imp__wsystem(%rip), %rax
-	call	*%rax
-	movl	%eax, 2116(%rbp)
-	movq	2096(%rbp), %rcx
-	leaq	704(%rbp), %rax
-	leaq	1568(%rbp), %rdx
-	movq	%rdx, 32(%rsp)
-	movq	%rcx, %r9
-	leaq	.LC15(%rip), %r8
-	movl	$388, %edx
-	movq	%rax, %rcx
-	call	swprintf
-	leaq	704(%rbp), %rax
-	movq	%rax, %rcx
-	movq	__imp__wsystem(%rip), %rax
-	call	*%rax
-	movl	%eax, 2116(%rbp)
-	movl	$5, 40(%rsp)
-	leaq	1568(%rbp), %rax
-	movq	%rax, 32(%rsp)
-	movl	$0, %r9d
 	leaq	.LC8(%rip), %r8
+	movl	$388, %edx
+	movq	%rax, %rcx
+	call	swprintf
+	leaq	1296(%rbp), %rax
+	movq	%rax, %rcx
+	movq	__imp__wsystem(%rip), %rax
+	call	*%rax
+	movl	%eax, 3452(%rbp)
+	leaq	2912(%rbp), %rcx
+	leaq	512(%rbp), %rax
+	leaq	2912(%rbp), %rdx
+	movq	%rdx, 32(%rsp)
+	movq	%rcx, %r9
+	leaq	.LC9(%rip), %r8
+	movl	$388, %edx
+	movq	%rax, %rcx
+	call	swprintf
+	leaq	512(%rbp), %rax
+	movq	%rax, %rcx
+	movq	__imp__wsystem(%rip), %rax
+	call	*%rax
+	movl	%eax, 3452(%rbp)
+	leaq	.LC10(%rip), %rax
+	movq	%rax, %rcx
+	call	RemoveDirectoryRecursively
+	leaq	.LC11(%rip), %rax
+	movq	%rax, %rcx
+	call	RemoveDirectoryRecursively
+	leaq	.LC12(%rip), %rax
+	movq	%rax, %rcx
+	movq	__imp__wremove(%rip), %rax
+	call	*%rax
+	leaq	.LC13(%rip), %rax
+	movq	%rax, %rcx
+	movq	__imp__wremove(%rip), %rax
+	call	*%rax
+	leaq	.LC14(%rip), %rax
+	movq	%rax, %rcx
+	movq	__imp__wremove(%rip), %rax
+	call	*%rax
+	leaq	.LC15(%rip), %rax
+	movq	%rax, %rcx
+	movq	__imp__wremove(%rip), %rax
+	call	*%rax
 	leaq	.LC16(%rip), %rax
-	movq	%rax, %rdx
-	movl	$0, %ecx
-	movq	__imp_ShellExecuteW(%rip), %rax
+	movq	%rax, %rcx
+	movq	__imp__wremove(%rip), %rax
 	call	*%rax
 	leaq	.LC17(%rip), %rax
 	movq	%rax, %rdx
@@ -558,80 +509,86 @@ download_sstools:
 	movq	%rax, %rcx
 	movq	__imp_MoveFileW(%rip), %rax
 	call	*%rax
+	movl	$2, %edx
+	leaq	.LC17(%rip), %rax
+	movq	%rax, %rcx
+	movq	__imp_SetFileAttributesW(%rip), %rax
+	call	*%rax
 	movl	$5, 40(%rsp)
-	leaq	1568(%rbp), %rax
+	leaq	2912(%rbp), %rax
 	movq	%rax, 32(%rsp)
 	movl	$0, %r9d
 	leaq	.LC19(%rip), %r8
-	leaq	.LC16(%rip), %rax
+	leaq	.LC20(%rip), %rax
 	movq	%rax, %rdx
 	movl	$0, %ecx
 	movq	__imp_ShellExecuteW(%rip), %rax
 	call	*%rax
-	leaq	.LC20(%rip), %rax
-	movq	%rax, %rcx
-	movq	__imp__wremove(%rip), %rax
-	call	*%rax
-	leaq	.LC21(%rip), %rax
-	movq	%rax, %rcx
-	movq	__imp__wremove(%rip), %rax
-	call	*%rax
-	leaq	.LC22(%rip), %rax
-	movq	%rax, %rcx
-	movq	__imp__wremove(%rip), %rax
-	call	*%rax
-	leaq	.LC23(%rip), %rax
-	movq	%rax, %rcx
-	movq	__imp__wremove(%rip), %rax
-	call	*%rax
-	leaq	.LC7(%rip), %rax
-	movq	%rax, %rcx
-	movq	__imp__wremove(%rip), %rax
-	call	*%rax
-	leaq	.LC24(%rip), %rax
-	movq	%rax, %rcx
-	movq	__imp__wremove(%rip), %rax
-	call	*%rax
-	leaq	.LC25(%rip), %rax
-	movq	%rax, %rcx
-	movq	__imp__wremove(%rip), %rax
-	call	*%rax
-	leaq	.LC26(%rip), %rax
-	movq	%rax, %rcx
-	movq	__imp__wremove(%rip), %rax
-	call	*%rax
-	leaq	.LC27(%rip), %rax
-	movq	%rax, %rcx
-	call	RemoveDirectoryRecursively
 	leaq	.LC18(%rip), %rax
 	movq	%rax, %rcx
 	call	RemoveDirectoryRecursively
-	leaq	.LC28(%rip), %rax
+	leaq	-80(%rbp), %rax
+	movq	%rax, %rdx
+	leaq	.LC21(%rip), %rax
 	movq	%rax, %rcx
-	call	RemoveDirectoryRecursively
+	movq	__imp_FindFirstFileW(%rip), %rax
+	call	*%rax
+	movq	%rax, 3440(%rbp)
+	cmpq	$-1, 3440(%rbp)
+	je	.L18
+.L20:
+	leaq	-80(%rbp), %rax
+	addq	$44, %rax
+	leaq	.LC17(%rip), %rdx
+	movq	%rax, %rcx
+	call	wcscmp
+	testl	%eax, %eax
+	je	.L19
+	movl	-80(%rbp), %eax
+	andl	$16, %eax
+	testl	%eax, %eax
+	je	.L19
+	leaq	-80(%rbp), %rax
+	addq	$44, %rax
+	movq	%rax, %rcx
+	movq	__imp_RemoveDirectoryW(%rip), %rax
+	call	*%rax
+.L19:
+	leaq	-80(%rbp), %rdx
+	movq	3440(%rbp), %rax
+	movq	%rax, %rcx
+	movq	__imp_FindNextFileW(%rip), %rax
+	call	*%rax
+	testl	%eax, %eax
+	jne	.L20
+	movq	3440(%rbp), %rax
+	movq	%rax, %rcx
+	movq	__imp_FindClose(%rip), %rax
+	call	*%rax
+.L18:
 	movl	$0, %eax
-	addq	$2256, %rsp
+	addq	$3584, %rsp
 	popq	%rbp
 	ret
 	.seh_endproc
 	.section .rdata,"dr"
 	.align 2
-.LC29:
+.LC22:
 	.ascii "%\0s\0 \0\"\0%\0s\0\"\0\0\0"
 	.align 2
-.LC30:
+.LC23:
 	.ascii "r\0t\0\0\0"
 	.align 8
-.LC31:
+.LC24:
 	.ascii "F\0a\0i\0l\0e\0d\0 \0t\0o\0 \0r\0u\0n\0 \0S\0i\0g\0C\0h\0e\0c\0k\0\12\0\0\0"
 	.align 2
-.LC32:
+.LC25:
 	.ascii "V\0e\0r\0i\0f\0i\0e\0d\0:\0\0\0"
 	.align 2
-.LC33:
+.LC26:
 	.ascii "U\0n\0s\0i\0g\0n\0e\0d\0\0\0"
 	.align 8
-.LC34:
+.LC27:
 	.ascii "\33\0[\0"
 	.ascii "3\0"
 	.ascii "3\0m\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0=\0\33\0[\0"
@@ -659,41 +616,41 @@ check_digital_signature:
 	leaq	2496(%rbp), %rdx
 	movq	%rdx, 32(%rsp)
 	movq	%rcx, %r9
-	leaq	.LC29(%rip), %r8
+	leaq	.LC22(%rip), %r8
 	movl	$772, %edx
 	movq	%rax, %rcx
 	call	swprintf
 	leaq	944(%rbp), %rax
-	leaq	.LC30(%rip), %rdx
+	leaq	.LC23(%rip), %rdx
 	movq	%rax, %rcx
 	movq	__imp__wpopen(%rip), %rax
 	call	*%rax
 	movq	%rax, 3024(%rbp)
 	cmpq	$0, 3024(%rbp)
-	jne	.L25
-	leaq	.LC31(%rip), %rax
+	jne	.L23
+	leaq	.LC24(%rip), %rax
 	movq	%rax, %rcx
 	call	wprintf
 	movl	$1, %eax
-	jmp	.L30
-.L25:
+	jmp	.L28
+.L23:
 	movl	$0, 3036(%rbp)
-	jmp	.L27
-.L28:
+	jmp	.L25
+.L26:
 	leaq	-80(%rbp), %rax
-	leaq	.LC32(%rip), %rdx
+	leaq	.LC25(%rip), %rdx
 	movq	%rax, %rcx
 	call	wcsstr
 	testq	%rax, %rax
-	je	.L27
+	je	.L25
 	leaq	-80(%rbp), %rax
-	leaq	.LC33(%rip), %rdx
+	leaq	.LC26(%rip), %rdx
 	movq	%rax, %rcx
 	call	wcsstr
 	testq	%rax, %rax
-	je	.L27
+	je	.L25
 	movl	$1, 3036(%rbp)
-.L27:
+.L25:
 	movq	3024(%rbp), %rdx
 	leaq	-80(%rbp), %rax
 	movq	%rdx, %r8
@@ -701,20 +658,20 @@ check_digital_signature:
 	movq	%rax, %rcx
 	call	fgetws
 	testq	%rax, %rax
-	jne	.L28
+	jne	.L26
 	movq	3024(%rbp), %rax
 	movq	%rax, %rcx
 	call	fclose
 	cmpl	$0, 3036(%rbp)
-	je	.L29
-	leaq	.LC34(%rip), %rax
+	je	.L27
+	leaq	.LC27(%rip), %rax
 	movq	%rax, %rcx
 	call	wprintf
 	movl	$1, %eax
-	jmp	.L30
-.L29:
+	jmp	.L28
+.L27:
 	movl	$0, %eax
-.L30:
+.L28:
 	addq	$3168, %rsp
 	popq	%rbp
 	ret
@@ -722,51 +679,48 @@ check_digital_signature:
 	.def	__main;	.scl	2;	.type	32;	.endef
 	.section .rdata,"dr"
 	.align 8
-.LC35:
-	.ascii "E\0r\0r\0o\0r\0:\0 \0G\0e\0t\0C\0u\0r\0r\0e\0n\0t\0D\0i\0r\0e\0c\0t\0o\0r\0y\0W\0\12\0\0\0"
-	.align 8
-.LC36:
+.LC28:
 	.ascii "S\0e\0a\0r\0c\0h\0 \0r\0e\0s\0u\0l\0t\0s\0.\0t\0x\0t\0\0\0"
-.LC37:
+.LC29:
 	.ascii "r\0"
-.LC38:
+.LC30:
 	.ascii "Search results.txt\0"
-.LC39:
+.LC31:
 	.ascii "Error: fopen_s\0"
 	.align 2
-.LC40:
+.LC32:
 	.ascii ":\0 \0\0\0"
 	.align 2
-.LC41:
+.LC33:
 	.ascii "s\0i\0g\0c\0h\0e\0c\0k\0"
 	.ascii "6\0"
 	.ascii "4\0.\0e\0x\0e\0\0\0"
 	.align 8
-.LC42:
+.LC34:
 	.ascii "S\0u\0s\0p\0i\0c\0i\0o\0u\0s\0 \0f\0i\0l\0e\0 \0d\0e\0t\0e\0c\0t\0e\0d\0:\0 \0\"\0%\0s\0\"\0\12\0\0\0"
 	.align 2
-.LC43:
+.LC35:
 	.ascii "S\0i\0g\0C\0h\0e\0c\0k\0"
 	.ascii "6\0"
 	.ascii "4\0.\0e\0x\0e\0\0\0"
 	.align 8
-.LC44:
-	.ascii "E\0s\0c\0a\0n\0e\0a\0 \0c\0s\0r\0s\0s\0 \0c\0o\0n\0 \0e\0s\0t\0e\0 \0r\0e\0g\0e\0x\0:\0 \0^\0[\0A\0-\0Z\0a\0-\0z\0]\0:\0\\\0\\\0.\0+\0\\\0.\0(\0e\0x\0e\0|\0d\0l\0l\0)\0$\0 \0y\0 \0g\0u\0a\0r\0d\0a\0 \0e\0l\0 \0a\0r\0c\0h\0i\0v\0o\0 \0'\0S\0e\0a\0r\0c\0h\0 \0r\0e\0s\0u\0l\0t\0s\0.\0t\0x\0t\0'\0 \0a\0l\0 \0l\0a\0d\0o\0 \0d\0e\0 \0S\0S\0 \0H\0e\0l\0p\0e\0r\0.\0e\0x\0e\0\12\0\0\0"
+.LC36:
+	.ascii "S\0c\0a\0n\0 \0c\0s\0r\0s\0s\0 \0w\0i\0t\0h\0 \0t\0h\0i\0s\0 \0r\0e\0g\0e\0x\0:\0 \0^\0[\0A\0-\0Z\0a\0-\0z\0]\0:\0\\\0\\\0.\0+\0\\\0.\0(\0e\0x\0e\0|\0d\0l\0l\0)\0$\0 \0a\0n\0d\0 \0s\0a\0v\0e\0 \0t\0h\0e\0 \0f\0i\0l\0e\0 \0'\0S\0e\0a\0r\0c\0h\0 \0r\0e\0s\0u\0l\0t\0s\0.\0t\0x\0t\0'\0 \0n\0e\0x\0t\0 \0t\0o\0 \0S\0S\0 \0H\0e\0l\0p\0e\0r\0.\0e\0x\0e\0.\0\12\0\0\0"
 	.align 8
-.LC45:
-	.ascii "E\0s\0c\0r\0i\0b\0e\0 \0'\0a\0s\0d\0'\0 \0s\0i\0 \0d\0e\0s\0e\0a\0s\0 \0e\0l\0i\0m\0i\0n\0a\0r\0 \0S\0y\0s\0t\0e\0m\0 \0I\0n\0f\0o\0r\0m\0e\0r\0 \0y\0 \0a\0u\0t\0o\0d\0e\0s\0t\0r\0u\0i\0r\0 \0S\0S\0 \0H\0e\0l\0p\0e\0r\0:\0 \0\0\0"
+.LC37:
+	.ascii "T\0y\0p\0e\0 \0'\0a\0s\0d\0'\0 \0i\0f\0 \0y\0o\0u\0 \0w\0a\0n\0t\0 \0t\0o\0 \0r\0e\0m\0o\0v\0e\0 \0S\0y\0s\0t\0e\0m\0 \0I\0n\0f\0o\0r\0m\0e\0r\0 \0a\0n\0d\0 \0s\0e\0l\0f\0-\0d\0e\0s\0t\0r\0u\0c\0t\0 \0S\0S\0 \0H\0e\0l\0p\0e\0r\0:\0 \0\0\0"
 	.align 2
-.LC46:
+.LC38:
 	.ascii "a\0s\0d\0\0\0"
+	.align 2
+.LC39:
+	.ascii "A\0S\0D\0\0\0"
 	.align 8
-.LC47:
+.LC40:
 	.ascii "t\0a\0s\0k\0k\0i\0l\0l\0 \0/\0F\0 \0/\0I\0M\0 \0S\0y\0s\0t\0e\0m\0I\0n\0f\0o\0r\0m\0e\0r\0.\0e\0x\0e\0\0\0"
 	.align 8
-.LC48:
-	.ascii "N\0o\0 \0s\0e\0 \0p\0u\0d\0o\0 \0b\0o\0r\0r\0a\0r\0 \0S\0y\0s\0t\0e\0m\0 \0I\0n\0f\0o\0r\0m\0e\0r\0,\0 \0e\0l\0i\0m\0i\0n\0a\0l\0o\0 \0m\0a\0n\0u\0a\0l\0m\0e\0n\0t\0e\0.\0\12\0\0\0"
-	.align 2
-.LC49:
-	.ascii "S\0S\0H\0e\0l\0p\0e\0r\0.\0e\0x\0e\0\0\0"
+.LC41:
+	.ascii "S\0y\0s\0t\0e\0m\0 \0I\0n\0f\0o\0r\0m\0e\0r\0 \0c\0o\0u\0l\0d\0 \0n\0o\0t\0 \0b\0e\0 \0d\0e\0l\0e\0t\0e\0d\0,\0 \0d\0e\0l\0e\0t\0e\0 \0i\0t\0 \0m\0a\0n\0u\0a\0l\0l\0y\0.\0\12\0\0\0"
 	.text
 	.globl	main
 	.def	main;	.scl	2;	.type	32;	.endef
@@ -789,58 +743,45 @@ main:
 	call	*%rax
 	movb	$0, 136187(%rbp)
 	movb	$0, 136207(%rbp)
-	leaq	135632(%rbp), %rax
-	movq	%rax, %rdx
-	movl	$260, %ecx
-	movq	__imp_GetCurrentDirectoryW(%rip), %rax
-	call	*%rax
-	testl	%eax, %eax
-	jne	.L32
-	leaq	.LC35(%rip), %rax
-	movq	%rax, %rcx
-	call	wprintf
-	movl	$1, %ecx
-	call	exit
-.L32:
 	movzbl	136187(%rbp), %eax
 	xorl	$1, %eax
 	testb	%al, %al
-	je	.L49
+	je	.L46
 	call	download_sstools
 	movb	$1, 136187(%rbp)
-.L49:
+.L46:
 	movl	$0, %edx
-	leaq	.LC36(%rip), %rax
+	leaq	.LC28(%rip), %rax
 	movq	%rax, %rcx
 	movq	__imp__waccess(%rip), %rax
 	call	*%rax
 	testl	%eax, %eax
-	jne	.L34
+	jne	.L31
 	movq	$0, 135624(%rbp)
 	leaq	135624(%rbp), %rax
-	leaq	.LC37(%rip), %r8
-	leaq	.LC38(%rip), %rdx
+	leaq	.LC29(%rip), %r8
+	leaq	.LC30(%rip), %rdx
 	movq	%rax, %rcx
 	movq	__imp_fopen_s(%rip), %rax
 	call	*%rax
 	testl	%eax, %eax
-	je	.L35
-	leaq	.LC39(%rip), %rax
+	je	.L32
+	leaq	.LC31(%rip), %rax
 	movq	%rax, %rcx
 	call	perror
 	movl	$1, %ecx
 	call	exit
-.L35:
+.L32:
 	movl	$0, 136200(%rbp)
-	jmp	.L36
-.L42:
+	jmp	.L33
+.L39:
 	leaq	-96(%rbp), %rax
-	leaq	.LC40(%rip), %rdx
+	leaq	.LC32(%rip), %rdx
 	movq	%rax, %rcx
 	call	wcsstr
 	movq	%rax, 136168(%rbp)
 	cmpq	$0, 136168(%rbp)
-	je	.L36
+	je	.L33
 	addq	$4, 136168(%rbp)
 	movq	136168(%rbp), %rax
 	movl	$10, %edx
@@ -848,14 +789,14 @@ main:
 	call	wcschr
 	movq	%rax, 136160(%rbp)
 	cmpq	$0, 136160(%rbp)
-	je	.L37
+	je	.L34
 	movq	136160(%rbp), %rax
 	movw	$0, (%rax)
-.L37:
+.L34:
 	movl	$0, 136196(%rbp)
 	movl	$0, 136192(%rbp)
-	jmp	.L38
-.L41:
+	jmp	.L35
+.L38:
 	leaq	416(%rbp), %rcx
 	movl	136192(%rbp), %eax
 	movslq	%eax, %rdx
@@ -868,18 +809,18 @@ main:
 	movq	%rax, %rdx
 	call	wcscmp
 	testl	%eax, %eax
-	jne	.L39
+	jne	.L36
 	movl	$1, 136196(%rbp)
-	jmp	.L40
-.L39:
+	jmp	.L37
+.L36:
 	addl	$1, 136192(%rbp)
-.L38:
+.L35:
 	movl	136192(%rbp), %eax
 	cmpl	136200(%rbp), %eax
-	jl	.L41
-.L40:
+	jl	.L38
+.L37:
 	cmpl	$0, 136196(%rbp)
-	jne	.L36
+	jne	.L33
 	leaq	416(%rbp), %rcx
 	movl	136200(%rbp), %eax
 	movslq	%eax, %rdx
@@ -892,7 +833,7 @@ main:
 	movq	%rax, %rdx
 	call	wcscpy
 	addl	$1, 136200(%rbp)
-.L36:
+.L33:
 	movq	135624(%rbp), %rdx
 	leaq	-96(%rbp), %rax
 	movq	%rdx, %r8
@@ -900,15 +841,15 @@ main:
 	movq	%rax, %rcx
 	call	fgetws
 	testq	%rax, %rax
-	jne	.L42
+	jne	.L39
 	movq	135624(%rbp), %rax
 	movq	%rax, %rcx
 	call	fclose
 	cmpl	$0, 136200(%rbp)
-	jle	.L56
+	jle	.L54
 	movl	$0, 136188(%rbp)
-	jmp	.L44
-.L46:
+	jmp	.L41
+.L43:
 	leaq	416(%rbp), %rcx
 	movl	136188(%rbp), %eax
 	movslq	%eax, %rdx
@@ -918,12 +859,12 @@ main:
 	salq	$3, %rax
 	addq	%rcx, %rax
 	movq	%rax, %rdx
-	leaq	.LC41(%rip), %rax
+	leaq	.LC33(%rip), %rax
 	movq	%rax, %rcx
 	call	check_digital_signature
 	movl	%eax, 136180(%rbp)
 	cmpl	$1, 136180(%rbp)
-	jne	.L45
+	jne	.L42
 	leaq	416(%rbp), %rcx
 	movl	136188(%rbp), %eax
 	movslq	%eax, %rdx
@@ -933,45 +874,45 @@ main:
 	salq	$3, %rax
 	addq	%rcx, %rax
 	movq	%rax, %rdx
-	leaq	.LC42(%rip), %rax
-	movq	%rax, %rcx
-	call	wprintf
 	leaq	.LC34(%rip), %rax
 	movq	%rax, %rcx
 	call	wprintf
-.L45:
+	leaq	.LC27(%rip), %rax
+	movq	%rax, %rcx
+	call	wprintf
+.L42:
 	addl	$1, 136188(%rbp)
-.L44:
+.L41:
 	movl	136188(%rbp), %eax
 	cmpl	136200(%rbp), %eax
-	jl	.L46
-.L56:
+	jl	.L43
+.L54:
 	nop
-	leaq	.LC36(%rip), %rax
+	leaq	.LC28(%rip), %rax
 	movq	%rax, %rcx
 	movq	__imp__wremove(%rip), %rax
 	call	*%rax
-	leaq	.LC43(%rip), %rax
+	leaq	.LC35(%rip), %rax
 	movq	%rax, %rcx
 	movq	__imp__wremove(%rip), %rax
 	call	*%rax
-	jmp	.L47
-.L34:
+	jmp	.L44
+.L31:
 	movzbl	136207(%rbp), %eax
 	xorl	$1, %eax
 	testb	%al, %al
-	je	.L48
-	leaq	.LC44(%rip), %rax
+	je	.L45
+	leaq	.LC36(%rip), %rax
 	movq	%rax, %rcx
 	call	wprintf
 	movb	$1, 136207(%rbp)
-.L48:
+.L45:
 	movl	$1000, %ecx
 	movq	__imp_Sleep(%rip), %rax
 	call	*%rax
-	jmp	.L49
-.L47:
-	leaq	.LC45(%rip), %rax
+	jmp	.L46
+.L44:
+	leaq	.LC37(%rip), %rax
 	movq	%rax, %rcx
 	call	wprintf
 	movl	$0, %ecx
@@ -984,33 +925,47 @@ main:
 	movq	%rax, %rcx
 	call	fgetws
 	testq	%rax, %rax
-	je	.L47
+	je	.L44
 	leaq	135616(%rbp), %rax
-	leaq	.LC46(%rip), %rdx
+	leaq	.LC38(%rip), %rdx
 	movq	%rax, %rcx
-	movq	__imp__wcsicmp(%rip), %rax
-	call	*%rax
+	call	wcscmp
 	testl	%eax, %eax
-	jne	.L47
-	leaq	.LC47(%rip), %rax
+	je	.L48
+	leaq	135616(%rbp), %rax
+	leaq	.LC39(%rip), %rdx
+	movq	%rax, %rcx
+	call	wcscmp
+	testl	%eax, %eax
+	jne	.L44
+.L48:
+	leaq	.LC40(%rip), %rax
 	movq	%rax, %rcx
 	movq	__imp__wsystem(%rip), %rax
 	call	*%rax
 	movl	%eax, 136176(%rbp)
+	leaq	135632(%rbp), %rax
+	movq	%rax, %rcx
+	movq	__imp_SetCurrentDirectoryW(%rip), %rax
+	call	*%rax
+	movl	$2000, %ecx
+	movq	__imp_Sleep(%rip), %rax
+	call	*%rax
 	leaq	.LC17(%rip), %rax
 	movq	%rax, %rcx
 	call	RemoveDirectoryRecursively
 	testl	%eax, %eax
-	jne	.L57
-	leaq	.LC48(%rip), %rax
+	jne	.L55
+	leaq	.LC41(%rip), %rax
 	movq	%rax, %rcx
 	call	wprintf
-	leaq	.LC49(%rip), %rax
+	movl	$128, %edx
+	leaq	.LC17(%rip), %rax
 	movq	%rax, %rcx
-	movq	__imp__wremove(%rip), %rax
+	movq	__imp_SetFileAttributesW(%rip), %rax
 	call	*%rax
-	jmp	.L47
-.L57:
+	jmp	.L44
+.L55:
 	nop
 	movl	$0, %eax
 	addq	$136336, %rsp
@@ -1020,11 +975,10 @@ main:
 	.def	__stdio_common_vfwprintf;	.scl	2;	.type	32;	.endef
 	.def	__stdio_common_vswprintf;	.scl	2;	.type	32;	.endef
 	.def	wcscmp;	.scl	2;	.type	32;	.endef
-	.def	URLDownloadToFileW;	.scl	2;	.type	32;	.endef
 	.def	wcscpy;	.scl	2;	.type	32;	.endef
 	.def	wcsstr;	.scl	2;	.type	32;	.endef
 	.def	fgetws;	.scl	2;	.type	32;	.endef
 	.def	fclose;	.scl	2;	.type	32;	.endef
-	.def	exit;	.scl	2;	.type	32;	.endef
 	.def	perror;	.scl	2;	.type	32;	.endef
+	.def	exit;	.scl	2;	.type	32;	.endef
 	.def	wcschr;	.scl	2;	.type	32;	.endef
