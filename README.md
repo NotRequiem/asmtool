@@ -1,5 +1,5 @@
 ## SS-Helper
-To run this program, you will need to have Powershell (latest version) installed, because to not have 70000 lines of ASM source code, i used the PowerShell API to do some file operations
+To run this program, you need to have PowerShell installed, because to not have 70000 lines of ASM source code, i used the PowerShell API to do some file operations
 .
 ## Features
 1. Automatically downloads, extracts and runs System Informer without the need for installation. It will run SystemInformer as admin for you if you run SSHelper as admininistrator.
